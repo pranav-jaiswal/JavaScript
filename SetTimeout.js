@@ -7,6 +7,7 @@ Output
 15050
 5 seconds gone
 10 seonds have passed
+
 */
 
 function sum(n1, n2) {
