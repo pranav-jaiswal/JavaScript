@@ -28,6 +28,7 @@ function calculateSum(num) {
 if we use this.. before request goes to any GET/ POST method
 The request goes to middleware function and then only goes to the GET/ POST method
 USE of MIDDLEWARE: For authentication
+NOTE: MIDDLEWARES CAN BE METHOD SPECIFIC AS WELL
 */
 
 /* 
