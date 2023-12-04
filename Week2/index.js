@@ -45,8 +45,13 @@ app.get('/handleSum', (req, res) => {
     // console.log('Counter: ' + req.query.counter);
     console.log('Counter: ' + req.body.counter);
     console.log('from get method: counter=' + counter);
-    let calculatedSum = calculateSum(counter);
-    res.send(`Calculated sum is ${calculatedSum}`);
+    if(counter < 1000000) {
+        let calculatedSum = calculateSum(counter);
+        res.send(`Calculated sum is ${calculatedSum}`);
+    } else {
+        // By default express sends 200, this way we can change the status code.
+        res.status(411).send('You have sent very big number.');
+    }
 })
 
 app.listen(port, () => {
