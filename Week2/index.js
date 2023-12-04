@@ -47,11 +47,25 @@ app.get('/handleSum', (req, res) => {
     console.log('from get method: counter=' + counter);
     if(counter < 1000000) {
         let calculatedSum = calculateSum(counter);
+        // text as response body
         res.send(`Calculated sum is ${calculatedSum}`);
     } else {
         // By default express sends 200, this way we can change the status code.
         res.status(411).send('You have sent very big number.');
     }
+})
+
+// multiple types of response body : text/ json/ html
+app.get('/', (req, res) => {
+    obj = {
+        name: "Pranav",
+        lastName: "Jaiswal"
+    }
+    // Json Body
+    // res.send(obj);
+
+    // Send html/ html file
+    res.sendFile(__dirname+"/a.html");
 })
 
 app.listen(port, () => {
