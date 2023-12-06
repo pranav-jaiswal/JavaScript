@@ -61,11 +61,11 @@ app.get('/', (req, res) => {
         name: "Pranav",
         lastName: "Jaiswal"
     }
-    // Json Body
-    // res.send(obj);
+    //Json Body
+    res.send(obj);
 
     // Send html/ html file
-    res.sendFile(__dirname+"/a.html");
+    // res.sendFile(__dirname+"/a.html");
 })
 
 app.listen(port, () => {
